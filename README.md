@@ -1,2 +1,2 @@
 # sidcrafts.com - My personal website
-Hi. I'm Sid
+You can check out my website [here](https://sidcrafts.com)
