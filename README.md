@@ -1,1 +1,2 @@
-# 13th iteration of website
+# sidcrafts.com - My personal website
+Hi. I'm Sid
