@@ -5,18 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/styles/tailwind.css" rel="stylesheet">
   <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+  <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
 </head>
-<body class="antialiased">
+<body  x-data="{ open: false }" class="antialiased">
 <header class="relative">
   <div class="px-4 sm:px-6 md:px-8">
     <div class="relative pt-6 lg:pt-8 flex items-center justify-between text-gray-700 font-semibold text-sm leading-6">
       <a href="/">@sidcraftscode</a>
       <div class="flex items-center">
         <div class="-my-1 ml-2 -mr-1 md:hidden">
-          <button type="button" class="text-gray-500 w-8 h-8 flex items-center justify-center hover:text-gray-600">
+          <button type="button" @click="open = true" class="text-gray-500 w-8 h-8 flex items-center justify-center hover:text-gray-600">
             <span class="sr-only">Navigation</span>
-            <svg width="24" height="24" fill="none" aria-hidden="true">
-              <path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </div>
@@ -150,5 +151,37 @@
       </div>
    </div>
 </footer>
+<div id="menu" class="">
+<div x-show="open" @click="open = false" class="block fixed inset-0 bg-black bg-opacity-20 backdrop-blur-sm" aria-hidden="true"></div>
+<div x-show="open" @click.away="open = false" x-transition:enter="transition ease-out duration-100 transform"
+x-transition:enter-start="opacity-0 scale-95"
+x-transition:enter-end="opacity-100 scale-100"
+x-transition:leave="transition ease-in duration-75 transform"
+x-transition:leave-start="opacity-100 scale-100"
+x-transition:leave-end="opacity-0 scale-95"
+ class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg shadow-lg p-6 text-base font-semibold text-gray-900">
+  <button  @click="open = false" class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-600" tabindex="0">
+     <span class="sr-only">Close navigation</span>
+     <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+        <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+     </svg>
+    </button>
+  <ul class="space-y-6">
+           <li><a @click="open = false" class="hover:text-gray-500" href="/#about">About</a></li>
+           <li><a @click="open = false" class="hover:text-gray-500" href="/#tools">Tools</a></li>
+           <li><a @click="open = false" class="hover:text-gray-500" href="/#projects">Projects</a></li>
+           <li><a @click="open = false" class="hover:text-gray-500" href="/#contact">Contact me</a></li>
+           <li><a @click="open = false" class="hover:text-gray-500" href="/blog">Blog →</a></li>        
+           <li>
+             <a href="https://twitter.com/sidcraftscode" class="block w-6 h-6 text-gray-400 hover:text-gray-500">
+               <span class="sr-only">Twitter</span>
+               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+               </svg>
+             </a>
+           </li>
+  </ul>
+</div>
+</div>
 </body>
 </html>
