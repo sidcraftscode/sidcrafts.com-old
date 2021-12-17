@@ -14,12 +14,12 @@
       <a href="/">@sidcraftscode</a>
       <div class="flex items-center">
         <div class="-my-1 ml-2 -mr-1 md:hidden">
-          <button type="button" class="text-gray-500 w-8 h-8 flex items-center justify-center hover:text-gray-600">
+          <a href="#menu" class="text-gray-500 w-8 h-8 flex items-center justify-center hover:text-gray-600">
             <span class="sr-only">Navigation</span>
             <svg width="24" height="24" fill="none" aria-hidden="true">
               <path d="M12 6v.01M12 12v.01M12 18v.01M12 7a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm0 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
-          </button>
+          </a>
         </div>
         <nav class="hidden md:block">
           <ul class="flex items-center space-x-8">
@@ -66,5 +66,28 @@
       </div>
    </div>
 </footer>
+<div id="menu" class="fixed top-4 right-4 w-full max-w-xs bg-white rounded-lg  target:block hidden shadow-lg p-6 text-base font-semibold text-gray-900">
+  <a href="#" class="absolute top-5 right-5 w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-600" tabindex="0">
+     <span class="sr-only">Close navigation</span>
+     <svg viewBox="0 0 10 10" class="w-2.5 h-2.5 overflow-visible" aria-hidden="true">
+        <path d="M0 0L10 10M10 0L0 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+     </svg>
+    </a>
+  <ul class="space-y-6">
+           <li><a class="hover:text-gray-500" href="/#about">About</a></li>
+           <li><a class="hover:text-gray-500" href="/#tools">Tools</a></li>
+           <li><a class="hover:text-gray-500" href="/#projects">Projects</a></li>
+           <li><a class="hover:text-gray-500" href="/#contact">Contact me</a></li>
+           <li><a class="hover:text-gray-500" href="/blog">Blog →</a></li>        
+           <li>
+             <a href="https://twitter.com/sidcraftscode" class="block w-6 h-6 text-gray-400 hover:text-gray-500">
+               <span class="sr-only">Twitter</span>
+               <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+                 <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+               </svg>
+             </a>
+           </li>
+  </ul>
+</div>
 </body>
 </html>
