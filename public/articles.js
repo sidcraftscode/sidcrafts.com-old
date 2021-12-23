@@ -44,7 +44,7 @@ gql(GET_USER_ARTICLES, { page: 0 })
             let link = document.createElement('a');
             link.classList = "block mt-2 mb-12 text-lg text-gray-900 font-medium underline text-left max-w-3xl mx-auto"
             link.innerHTML = 'Read on Hashnode &rarr;'
-            link.href = `https://sidcraftscode.hashnode.dev/${article.slug}`;
+            link.href = `https://blog.sidcrafts.com/${article.slug}`;
 
             container.appendChild(title);
             container.appendChild(brief);
